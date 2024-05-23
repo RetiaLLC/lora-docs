@@ -1,0 +1,45 @@
+site_name: Retia
+copyright: Created with <3 by autmn for Retia
+# TODO: add repo when it's open sourced
+#  repo_url: https://github.com/RetiaLLC/lora-paw
+# repo_name: RetiaLLC/lora-paw
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+        primary: indigo
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+        primary: indigo
+  logo: assets/retia-white.png
+  favicon: assets/retia-white.png
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+
+extra:
+  social:
+    - icon: material/store
+      link: https://retia.io
+    - icon: fontawesome/brands/github
+      link: https://github.com/RetiaLLC
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@retiallc
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/mc96x3cWwV
