@@ -1,11 +1,14 @@
-site_name: Retia
+site_name: LoRa Paw
 copyright: Created with <3 by autmn for Retia
-# TODO: add repo when it's open sourced
-#  repo_url: https://github.com/RetiaLLC/lora-paw
-# repo_name: RetiaLLC/lora-paw
+site_url: https://usb.nugget.dev
 
 nav:
   - Home: index.md
+  - Projects:
+      - Rickroll: projects/rickroll.md
+  - Technical:
+      - Pinouts: technical/pinouts.md
+      - Binaries: technical/binaries.md
 
 theme:
   name: material
@@ -26,14 +29,28 @@ theme:
     - navigation.footer
     - navigation.instant
     - navigation.instant.progress
-
+    - navigation.top
+    - content.code.copy
+    - content.tabs.link
 
 markdown_extensions:
   - admonition
   - codehilite:
       guess_lang: false
+  - toc:
+      permalink: True
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: copiable
+          class: copiable
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra:
+  generator: false
   social:
     - icon: material/store
       link: https://retia.io

@@ -24,6 +24,9 @@ jobs:
       - name: Build the MkDocs site
         run: mkdocs build
 
+      - name: Create CNAME
+        run: echo "lora.nugget.dev" > ./site/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
