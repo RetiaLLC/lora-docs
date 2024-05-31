@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://usb.nugget.dev/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <loc>https://lora.nugget.dev/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://usb.nugget.dev/projects/rickroll/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <loc>https://lora.nugget.dev/projects/rickroll/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://usb.nugget.dev/technical/binaries/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <loc>https://lora.nugget.dev/technical/binaries/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://usb.nugget.dev/technical/pinouts/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <loc>https://lora.nugget.dev/technical/pinouts/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lora.nugget.dev/technical/schematics/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
