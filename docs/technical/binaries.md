@@ -3,11 +3,10 @@
 !!! warning "NOTICE"
     Software for the LoRa Paw is still under development. However, you can download the latest beta binaries here.
 
-=== "S2"
+=== "USB Nugget"
 
-    [Download ESP32S2 Binary](../assets/binaries/LoRa_beta_s2.bin)
+    [Download USB Nugget Binary](../assets/binaries/LoRa_beta_s2.bin)
 
-=== "S3"
+=== "Bluetooth Nugget"
 
-    [Download ESP32S3 Binary](../assets/binaries/LoRa_beta_s3.bin)
-
+    [Download Bluetooth Nugget Binary](../assets/binaries/LoRa_beta_s3.bin)

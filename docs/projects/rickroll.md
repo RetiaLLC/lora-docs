@@ -29,11 +29,11 @@ In order to perform a rickroll over Lora, several things must happen:
 Luckily for us, this is a fairly simple task that involves modifying `code.py`, and creating a duckyscript payload (`payload.txt`).
 
 !!! warning
-    Depending on your Nugget, you may have an ESP32S2 or ESP32S3. [Pinouts](../technical/pinouts.md) vary between the two.
+    Pinouts vary between USB and Bluetooth Nuggets. Be sure it matches the [pinouts](../technical/pinouts.md)
 
 ```python title="code.py"
 # SPDX-FileCopyrightText: 2024 ladyada for Adafruit Industries & Skicka
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: MITs
 
 # Simple demo of sending and recieving data with the RFM95 LoRa radio.
 # Author: Tony DiCola / Kody Kinzie
