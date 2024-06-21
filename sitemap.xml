@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lora.nugget.dev/</loc>
-         <lastmod>2024-05-31</lastmod>
+         <lastmod>2024-06-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://lora.nugget.dev/projects/rickroll/</loc>
-         <lastmod>2024-05-31</lastmod>
+         <loc>https://lora.nugget.dev/guides/examples/</loc>
+         <lastmod>2024-06-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lora.nugget.dev/guides/rickroll/</loc>
+         <lastmod>2024-06-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lora.nugget.dev/technical/binaries/</loc>
-         <lastmod>2024-05-31</lastmod>
+         <lastmod>2024-06-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lora.nugget.dev/technical/pinouts/</loc>
-         <lastmod>2024-05-31</lastmod>
+         <lastmod>2024-06-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lora.nugget.dev/technical/schematics/</loc>
-         <lastmod>2024-05-31</lastmod>
+         <lastmod>2024-06-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
