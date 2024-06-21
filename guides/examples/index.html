@@ -634,30 +634,30 @@
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Send Hello World on the USB Nugget (ESP32s2)</span>
-  <span class="kn">import</span> <span class="nn">board</span>
-  <span class="kn">import</span> <span class="nn">busio</span>
-  <span class="kn">import</span> <span class="nn">digitalio</span>
-  <span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Send Hello World on the USB Nugget (ESP32s2)</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">busio</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
 
-  <span class="c1"># Initialize SPI interface.</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
+<span class="c1"># Initialize SPI interface.</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
 
-  <span class="c1"># Send text without specifiyng encoding</span>
-  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Hello World string!&quot;</span><span class="p">)</span>
+<span class="c1"># Send text without specifiyng encoding</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Hello World string!&quot;</span><span class="p">)</span>
 
 
-  <span class="c1">#Send the same text, specify utf-8 bytes</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s2">&quot;Hello world!</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Hello World bytes!&quot;</span><span class="p">)</span>
+<span class="c1">#Send the same text, specify utf-8 bytes</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s2">&quot;Hello world!</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Hello World bytes!&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -801,34 +801,34 @@
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Recieve Hello World on the Bluetooth Nugget (ESP32s3)</span>
-  <span class="kn">import</span> <span class="nn">board</span>
-  <span class="kn">import</span> <span class="nn">busio</span>
-  <span class="kn">import</span> <span class="nn">digitalio</span>
-  <span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Recieve Hello World on the Bluetooth Nugget (ESP32s3)</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">busio</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
 
-  <span class="c1"># Initialize SPI interface</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
+<span class="c1"># Initialize SPI interface</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
 
-  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-      <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
-      <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
-          <span class="c1"># you always receive raw bytes and need to convert to a text</span>
-          <span class="c1"># format like ASCII if you intend to do string processing.</span>
-          <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
-          <span class="c1"># Also read the signal strength of the received message and print it.</span>
-          <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
+        <span class="c1"># you always receive raw bytes and need to convert to a text</span>
+        <span class="c1"># format like ASCII if you intend to do string processing.</span>
+        <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
+        <span class="c1"># Also read the signal strength of the received message and print it.</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -877,47 +877,47 @@
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Repeat a received packet on the USB Nugget (ESP32s2)</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Repeat a received packet on the USB Nugget (ESP32s2)</span>
 
-  <span class="kn">import</span> <span class="nn">board</span>
-  <span class="kn">import</span> <span class="nn">busio</span>
-  <span class="kn">import</span> <span class="nn">digitalio</span>
-  <span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
-  <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">busio</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-  <span class="c1"># Initialize SPI interface.</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
+<span class="c1"># Initialize SPI interface.</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
 
-  <span class="c1"># Send text without specifiyng encoding</span>
-  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Ping!&quot;</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Ping!&quot;</span><span class="p">)</span>
+<span class="c1"># Send text without specifiyng encoding</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Ping!&quot;</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Ping!&quot;</span><span class="p">)</span>
 
-  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-      <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
-      <span class="c1"># If no packet was received during the timeout then None is returned.</span>
-      <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
-          <span class="c1"># you always receive raw bytes and need to convert to a text</span>
-          <span class="c1"># format like ASCII if you intend to do string processing.</span>
-          <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
-          <span class="c1"># Also read the signal strength of the received message and print it.</span>
-          <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
-          <span class="c1"># Rebroadcast the packet</span>
-          <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rebroadcasting packet...&quot;</span><span class="p">)</span>
-          <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">packet_text</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent!&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="c1"># If no packet was received during the timeout then None is returned.</span>
+    <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
+        <span class="c1"># you always receive raw bytes and need to convert to a text</span>
+        <span class="c1"># format like ASCII if you intend to do string processing.</span>
+        <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
+        <span class="c1"># Also read the signal strength of the received message and print it.</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
+        <span class="c1"># Rebroadcast the packet</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rebroadcasting packet...&quot;</span><span class="p">)</span>
+        <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">packet_text</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent!&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -961,47 +961,47 @@
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Repeat a received packet on the Bluetooth Nugget (ESP32s3)</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Repeat a received packet on the Bluetooth Nugget (ESP32s3)</span>
 
-  <span class="kn">import</span> <span class="nn">board</span>
-  <span class="kn">import</span> <span class="nn">busio</span>
-  <span class="kn">import</span> <span class="nn">digitalio</span>
-  <span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
-  <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">busio</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">import</span> <span class="nn">adafruit_rfm9x</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-  <span class="c1"># Initialize SPI interface</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
+<span class="c1"># Initialize SPI interface</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">23</span>
 
-  <span class="c1"># Send text without specifiyng encoding</span>
-  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Ping!&quot;</span>
-  <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Ping!&quot;</span><span class="p">)</span>
+<span class="c1"># Send text without specifiyng encoding</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Ping!&quot;</span>
+<span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent Ping!&quot;</span><span class="p">)</span>
 
-  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-      <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
-      <span class="c1"># If no packet was received during the timeout then None is returned.</span>
-      <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
-          <span class="c1"># you always receive raw bytes and need to convert to a text</span>
-          <span class="c1"># format like ASCII if you intend to do string processing.</span>
-          <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
-          <span class="c1"># Also read the signal strength of the received message and print it.</span>
-          <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
-          <span class="c1"># Rebroadcast the packet</span>
-          <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rebroadcasting packet...&quot;</span><span class="p">)</span>
-          <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">packet_text</span><span class="p">)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent!&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">packet</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="c1"># If no packet was received during the timeout then None is returned.</span>
+    <span class="k">if</span> <span class="n">packet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received nothing! Listening again...&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (raw bytes):&quot;</span><span class="p">,</span> <span class="n">packet</span><span class="p">)</span>
+        <span class="c1"># you always receive raw bytes and need to convert to a text</span>
+        <span class="c1"># format like ASCII if you intend to do string processing.</span>
+        <span class="n">packet_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received (ASCII):&quot;</span><span class="p">,</span> <span class="n">packet_text</span><span class="p">)</span>
+        <span class="c1"># Also read the signal strength of the received message and print it.</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="n">rfm9x</span><span class="o">.</span><span class="n">last_rssi</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received signal strength:&quot;</span><span class="p">,</span> <span class="n">signal</span><span class="p">)</span>
+        <span class="c1"># Rebroadcast the packet</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rebroadcasting packet...&quot;</span><span class="p">)</span>
+        <span class="n">rfm9x</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">packet_text</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sent!&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

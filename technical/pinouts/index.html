@@ -576,13 +576,13 @@ Bottom Pinout of the LoRa Paw</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Initialize SPI interface</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Initialize SPI interface</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO10</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO13</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO5</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -592,13 +592,13 @@ Bottom Pinout of the LoRa Paw</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Initialize SPI interface</span>
-  <span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Initialize SPI interface</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">busio</span><span class="o">.</span><span class="n">SPI</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO6</span><span class="p">,</span> <span class="n">MOSI</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO8</span><span class="p">,</span> <span class="n">MISO</span><span class="o">=</span><span class="n">board</span><span class="o">.</span><span class="n">IO7</span><span class="p">)</span>
 
-  <span class="c1"># Initialize RFM9x LoRa radio</span>
-  <span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
-  <span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
-  <span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
+<span class="c1"># Initialize RFM9x LoRa radio</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO9</span><span class="p">)</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">IO4</span><span class="p">)</span>
+<span class="n">rfm9x</span> <span class="o">=</span> <span class="n">adafruit_rfm9x</span><span class="o">.</span><span class="n">RFM9x</span><span class="p">(</span><span class="n">spi</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">RESET</span><span class="p">,</span> <span class="mf">915.0</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
