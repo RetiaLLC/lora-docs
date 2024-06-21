@@ -132,7 +132,9 @@
     ```
 
 
-## Packet Repeater
+## Packet Re-Yeeter 2000
+
+A Packet Re-Yeeter 2000 (Repeater) made by Kody Kinzie @skickar
 
 === "USB Nugget"
 
