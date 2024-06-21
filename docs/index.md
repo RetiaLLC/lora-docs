@@ -12,5 +12,5 @@ You can order one today from [our store](https://retia.io/products/lora-breakout
 
 
 !!! note
-    If you have one of our V1 Prototypes that look like the picture below, please refer to this GitHub link for pinouts and example code. The design has been updated, and they are not supported in this guide.
+    If you have one of our V1 Prototypes that look like the picture below, please refer to this [GitHub](https://github.com/RetiaLLC/RFM95w_LoRa_Nugget) for pinouts and example code. The design has been updated, and they are not supported in this guide.
     <img src="assets/lora-paw-v1.jpg" height="200" width="200" alt="Version 1 LoRa paw">
